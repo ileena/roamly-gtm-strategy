@@ -67,9 +67,6 @@ flowchart TD
 **Unvalidated assumptions:** Friend groups are the best initial segment; hosts can accommodate them; removing friction creates incremental bookings; invitations acquire new users.
 
 **Next test:** Identify group types and abandonment reasons, then pilot the complete flow with a suitable comparison to assess booking completion and incremental value.
-.
-- **القياس:** الحجوزات الجماعية المؤكدة مقسومة على محاولات الحجز المؤهلة خلال مدة محددة مسبقًا، مع مقارنة مناسبة. نراقب أيضًا انتقال المدعوين إلى الدفع، والإيراد الإضافي، وتكرار الحجز، والإلغاءات، والدعم، وقدرة المضيفين، وتجربة المسافر الفردي. نضع الأهداف الرقمية بعد معرفة خط الأساس.
-- **النقد والرد:** تسهيل التنسيق لا يضمن اتفاق المجموعة، لكنه يعالج عائقًا مذكورًا في السيناريو ويبرر تجربة محدودة. نحتفظ بعرض القيمة ونختبر أثره على الإكمال قبل التوسع.
-- **حدود الأدلة:** وجود التعثر معروف، لكن أفضلية الأصدقاء وجاهزية المضيفين وحجم الإيراد الإضافي ونمو الدعوات ما زالت افتراضات.
+
 
 *V1 working draft — strategy hypotheses, not validated launch results.*
