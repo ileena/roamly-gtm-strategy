@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leena Almoradi · Go-To-Market Final Project</title>
+<style>
+:root{--navy:#07162C;--blue:#3b82f6;--blue2:#60a5fa;--muted:#b8c5d6;--card:rgba(255,255,255,.055);--border:rgba(255,255,255,.13)}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{margin:0;background:#07162C;color:white;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.progress{position:fixed;top:0;left:0;width:0;height:4px;background:#3b82f6;z-index:9999}
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:999}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}.dot.active{background:#3b82f6;transform:scale(1.5)}
+section{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;padding:48px clamp(32px,6vw,100px);background:radial-gradient(circle at 85% 10%,rgba(59,130,246,.12),transparent 28%),#07162C}
+.container{width:min(1240px,100%);margin:auto}.animate{animation:enter .55s ease both}@keyframes enter{from{opacity:.55;transform:translateY(12px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;color:#60a5fa;margin-bottom:12px}
+h1{font-size:clamp(54px,7vw,96px);line-height:.95;letter-spacing:-.055em;margin:0 0 22px}
+h2{font-size:clamp(36px,4.5vw,60px);line-height:1;letter-spacing:-.04em;margin:0 0 24px}
+h3{font-size:16px;line-height:1.25;margin:0 0 7px}p{color:#b8c5d6;line-height:1.48;margin:6px 0}.blue{color:#60a5fa}.subtitle{max-width:780px;font-size:21px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);border-radius:15px;padding:17px 18px}.card.accent{border-color:rgba(59,130,246,.55);background:rgba(59,130,246,.10)}
+.label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:#60a5fa;margin-bottom:7px}.small{font-size:12.5px}
+ul{padding-left:17px;margin:7px 0 0}li{color:#b8c5d6;line-height:1.4;font-size:12.5px;margin:4px 0}
+.pill{display:inline-block;border:1px solid rgba(59,130,246,.35);background:rgba(59,130,246,.10);color:#dbeafe;border-radius:999px;padding:6px 9px;margin:3px 3px 3px 0;font-size:11px}
+.quote{border-left:4px solid #3b82f6;padding-left:18px;color:white;font-weight:600;font-size:clamp(18px,2vw,27px);line-height:1.32}.big{font-size:28px;font-weight:800;color:white;letter-spacing:-.03em}
+.table{width:100%;border-collapse:collapse;font-size:11.5px}.table th{text-align:left;color:#60a5fa;padding:8px;border-bottom:1px solid rgba(255,255,255,.18)}.table td{color:#b8c5d6;vertical-align:top;padding:8px;line-height:1.35;border-bottom:1px solid rgba(255,255,255,.08)}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;margin:13px 0}.flow div{border:1px solid rgba(59,130,246,.3);background:rgba(59,130,246,.08);padding:7px 9px;border-radius:8px;font-size:10px;color:#dbeafe}.flow .arrow{border:none;background:none;color:#60a5fa;padding:0}
+.slide-number{position:absolute;bottom:19px;left:clamp(32px,6vw,100px);color:rgba(255,255,255,.32);font-size:10px;letter-spacing:.14em}
+.callout{border:1px solid rgba(59,130,246,.5);background:rgba(59,130,246,.09);border-radius:15px;padding:18px}
+.message-box{border-radius:16px;padding:21px;border:1px solid rgba(59,130,246,.5);background:linear-gradient(135deg,rgba(59,130,246,.14),rgba(255,255,255,.035))}
+.mock{display:grid;grid-template-columns:1.3fr .7fr;gap:10px;margin-top:14px}.mock-card{background:#0B1E38;border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:12px}
+.line{height:6px;background:rgba(255,255,255,.13);border-radius:10px;margin:7px 0}.line.blue-line{background:#3b82f6;width:55%}.line.short{width:65%}
+.insight-number{font-size:42px;font-weight:800;color:rgba(59,130,246,.25);line-height:1;margin-bottom:15px}.center{text-align:center}.center .subtitle{margin-left:auto;margin-right:auto}
+@media(max-width:900px){section{padding:42px 26px 58px;align-items:flex-start}.container{margin-top:auto;margin-bottom:auto}.grid2,.grid3,.grid4,.mock{grid-template-columns:1fr}.dots{right:9px}h1{font-size:50px}.table{font-size:10px}}
+@media(max-height:780px) and (min-width:901px){section{padding-top:28px;padding-bottom:35px}h2{font-size:40px;margin-bottom:15px}.card{padding:12px 14px}p,li{line-height:1.3}.small,li{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div><div class="dots" id="dots"></div>
+
+<section><div class="container">
+<div style="width:58px;height:6px;background:#3b82f6;border-radius:10px;margin-bottom:27px"></div>
+<div class="eyebrow">Leena Almoradi · Go-To-Market Final Project</div>
+<h1>Roamly<br><span class="blue">Groups</span></h1>
+<p class="subtitle">Go-To-Market strategy for a coordinated group travel planning, booking, and payment experience.</p>
+<div style="margin-top:30px"><span class="pill">Strategy</span><span class="pill">Competitive Intelligence</span><span class="pill">Positioning</span><span class="pill">Messaging</span><span class="pill">Pricing</span></div>
+<p style="margin-top:28px;color:#7f91aa;font-size:12px">September 26, 2026</p>
+</div><div class="slide-number">01 / 08</div></section>
+
+<section><div class="container">
+<div class="eyebrow">01 · GTM Strategy</div><h2>Expand existing usage through a <span class="blue">product-led group experience.</span></h2>
+<div class="grid3">
+<div class="card accent"><span class="label">Primary goal · Expand</span><h3>Incremental completed bookings</h3><p class="small">Enable existing customers to book group experiences. Acquisition of invited friends is a secondary benefit.</p></div>
+<div class="card"><span class="label">Target segment</span><h3>Small groups of friends traveling together</h3><p class="small">Initially organized by existing Roamly users.</p><ul><li>Coordinate availability</li><li>Separate bookings</li><li>Manual payments</li></ul></div>
+<div class="card"><span class="label">Target audience</span><h3>Existing trip organizers first</h3><p class="small">Followed by invited participants who need to confirm plans and pay.</p></div>
+</div>
+<div class="grid2" style="margin-top:13px">
+<div class="card"><span class="label">GTM motion</span><h3>PLG primary · Community supporting</h3><ul><li>Self-serve flow addresses coordination friction</li><li>Invitations may introduce new customers</li><li>Communities support discovery and trust</li><li>Community-led growth is not yet proven</li><li>Sales-led growth is not the initial priority</li></ul></div>
+<div class="card"><span class="label">Channel approach</span><ul><li>Targeted in-product prompts</li><li>Email relevant existing users</li><li>Clear invitation, participation and payment flows</li><li>Test recommendations and trip stories in travel communities</li><li>Scale based on completed bookings, not traffic alone</li></ul></div>
+</div>
+<div class="flow"><div>Owned + community channels</div><div class="arrow">→</div><div>Existing organizer</div><div class="arrow">→</div><div>PLG / self-serve</div><div class="arrow">→</div><div>Friends join</div><div class="arrow">→</div><div>Participants pay</div><div class="arrow">→</div><div>Booking confirmed</div></div>
+<div class="grid3">
+<div class="card accent"><span class="label">Primary success metric</span><div class="big">Group-booking<br>completion rate</div><p class="small">Confirmed group bookings ÷ eligible group-booking starts within a predefined completion window.</p></div>
+<div class="card"><span class="label">Supporting measures</span><ul><li>Invite-to-payment conversion</li><li>Incremental platform revenue after refunds and variable costs</li><li>Repeat group bookings</li><li>Cancellations and support contacts</li><li>Host fulfillment</li></ul></div>
+<div class="card"><span class="label">Pilot</span><ul><li>Limited cities</li><li>Hosts verified for group capacity</li><li>Define payment deadlines</li><li>Define cancellation and refund handling</li><li>Confirm host readiness</li></ul></div>
+</div>
+<div class="grid2" style="margin-top:13px">
+<div class="card"><span class="label">Known evidence</span><ul><li>Users coordinate group bookings manually</li><li>Group sessions have high drop-off</li><li>Support reports product friction</li><li>Overall repeat booking is strong</li></ul></div>
+<div class="card"><span class="label">Still to validate</span><ul><li>Friend groups are the best initial segment</li><li>Hosts can accommodate them</li><li>Removing friction creates incremental bookings</li><li>Invitations acquire new users</li></ul></div>
+</div>
+<p style="font-size:10px;color:#7f91aa;margin-top:9px">Next test: identify group types and abandonment reasons, then pilot the complete flow with a suitable comparison. · V1 strategy hypotheses, not validated launch results.</p>
+</div><div class="slide-number">02 / 08</div></section>
+
+<section><div class="container">
+<div class="eyebrow">02 · Competitive Intelligence & Strategic Bet</div><h2>Don't compete on inventory. <span class="blue">Own group coordination.</span></h2>
+<table class="table"><thead><tr><th>Competitor</th><th>What they do well</th><th>Where they're weak</th><th>How Roamly wins</th></tr></thead><tbody>
+<tr><td><strong>Airbnb</strong></td><td>Strong brand, large inventory, familiar booking experience</td><td>Group coordination is not the core experience</td><td>Make group booking, payments and planning easier in one place</td></tr>
+<tr><td><strong>GetYourGuide</strong></td><td>Large selection of activities and easy experience booking</td><td>Primarily focused on activities, not coordinating the whole group</td><td>Provide a group-first journey from planning to payment</td></tr>
+<tr><td><strong>WhatsApp + payment apps</strong></td><td>Familiar, flexible and free</td><td>Fragmented, time-consuming and dependent on one organizer</td><td>Replace multiple tools with one shared group experience</td></tr>
+</tbody></table>
+<div class="grid2" style="margin-top:15px">
+<div class="card"><span class="label">Battlecard</span><h3>Our one-line advantage</h3><p class="small">Roamly Groups brings group booking, split payments, and shared trip planning into one coordinated experience.</p><h3 style="margin-top:12px">Trap question</h3><p class="small">How does your group currently coordinate the booking, collect everyone's payment, and keep the trip plan updated?</p></div>
+<div class="card"><span class="label">Objections</span><p class="small"><strong>“We already use Airbnb.”</strong><br>Airbnb is strong for booking travel, but Roamly Groups is designed around coordinating the whole group.</p><p class="small" style="margin-top:11px"><strong>“We can just use WhatsApp and send each other money.”</strong><br>You can, but that means managing the trip across multiple tools. Roamly keeps the group journey in one place.</p></div>
+</div>
+<div class="callout" style="margin-top:15px"><span class="label">Strategic bet</span><div class="quote">We are betting that groups will choose a better coordination experience over a larger marketplace when planning and paying together becomes difficult.</div></div>
+<div class="grid3" style="margin-top:14px">
+<div class="card"><span class="label">Why now</span><p class="small">Planning, booking, communication and payments are still fragmented across different tools.</p></div>
+<div class="card"><span class="label">Not doing</span><p class="small">Competing with large travel platforms on inventory size.</p></div>
+<div class="card accent"><span class="label">90-day proof</span><ul><li>Higher group-booking completion</li><li>Strong split-payment adoption</li><li>Repeat use of shared itinerary planning</li></ul></div>
+</div>
+</div><div class="slide-number">03 / 08</div></section>
+
+<section><div class="container">
+<div class="eyebrow">03 · Positioning</div><h2>Make group travel <span class="blue">easier and less stressful.</span></h2>
+<div class="grid2">
+<div class="card"><span class="label">Positioning framework</span>
+<h3>Target customer</h3><p class="small">The friend responsible for organizing a group trip.</p>
+<h3 style="margin-top:10px">Market category</h3><p class="small">Group travel planning and booking platform.</p>
+<h3 style="margin-top:10px">Key benefit</h3><p class="small">Makes organizing a group trip easier and less stressful.</p>
+<h3 style="margin-top:10px">Competitive alternative</h3><p class="small">Airbnb plus fragmented tools such as group chats and payment apps.</p>
+<h3 style="margin-top:10px">Differentiator</h3><p class="small">Combines vetted local experiences, shared itinerary planning, and split payments in one group-first experience.</p>
+<h3 style="margin-top:10px">Proof</h3><p class="small">Travelers can coordinate the itinerary, book experiences, and split payments in one place.</p>
+</div>
+<div>
+<div class="card accent"><span class="label">Core product truth</span><div class="quote">Roamly Groups brings group planning, booking, and split payments together in one coordinated experience.</div></div>
+<div class="card" style="margin-top:14px"><span class="label">Positioning by channel</span>
+<p class="small"><strong>Homepage</strong><br>Plan the trip together. Without the group-trip chaos.</p>
+<p class="small" style="margin-top:10px"><strong>Sales opener</strong><br>Stop chasing everyone for plans and payments.</p>
+<p class="small" style="margin-top:10px"><strong>App store</strong><br>Plan experiences, organize your itinerary, and split payments with your group — all in one place.</p>
+</div></div></div>
+<div class="grid4" style="margin-top:14px">
+<div class="card"><span class="label">Ownable ✓</span><p class="small">Group-first booking + planning + split payments.</p></div>
+<div class="card"><span class="label">Believable ✓</span><p class="small">Based directly on core product capabilities.</p></div>
+<div class="card"><span class="label">Relevant ✓</span><p class="small">Addresses plans and payment coordination.</p></div>
+<div class="card"><span class="label">Durable ✓</span><p class="small">Built around group coordination, not one feature.</p></div>
+</div>
+</div><div class="slide-number">04 / 08</div></section>
+
+<section><div class="container">
+<div class="eyebrow">04 · Messaging</div><h2>From group-trip chaos to <span class="blue">one shared journey.</span></h2>
+<div class="grid2">
+<div>
+<div class="grid2">
+<div class="card"><span class="label">From</span><p class="small">Group chats, separate bookings, payment apps, and one organizer chasing everyone.</p></div>
+<div class="card accent"><span class="label">To</span><p class="small">A shared group travel experience where everyone can plan, book and pay together in one place.</p></div>
+</div>
+<div class="card" style="margin-top:14px"><span class="label">Audience · Group trip organizer</span>
+<h3>🎯 Value Prop</h3><p class="small">Organize the group trip without carrying all the coordination stress yourself.</p>
+<h3 style="margin-top:11px">🏆 Capabilities</h3><p class="small">Group booking, vetted local experiences, shared itinerary planning, and split payments in one place.</p>
+<h3 style="margin-top:11px">📊 Evidence</h3><p class="small">The product experience allows the group to coordinate a shared itinerary, book experiences, and track split payments together.</p>
+</div></div>
+<div class="message-box"><span class="label">AI-generated homepage asset</span><h2 style="font-size:36px;margin-bottom:10px">Plan the trip together.<br><span class="blue">Without the group-trip chaos.</span></h2>
+<p class="small">Book local experiences, organize your shared itinerary, and split payments — all in one place.</p>
+<div class="mock"><div class="mock-card"><span class="label">Shared itinerary</span><div class="line blue-line"></div><div class="line"></div><div class="line short"></div><div class="line"></div></div>
+<div class="mock-card"><span class="label">Split payment</span><div class="big">4</div><p class="small">travelers</p><div class="line blue-line"></div></div></div>
+<div style="margin-top:14px"><p class="small"><strong>In-app:</strong> Your group plan is ready. Invite your friends to join, choose experiences, and split the payment together.</p><p class="small"><strong>Social:</strong> Planning the group trip shouldn't feel like a second job.</p></div>
+</div></div>
+<div class="grid3" style="margin-top:14px">
+<div class="card"><span class="label">Blind read · Who?</span><p class="small">Friends planning and organizing a group trip together.</p></div>
+<div class="card"><span class="label">Blind read · What?</span><p class="small">Plan experiences, manage a shared itinerary and split payments.</p></div>
+<div class="card"><span class="label">Blind read · Trust?</span><p class="small">The visual makes the itinerary and split-payment benefits concrete.</p></div>
+</div>
+</div><div class="slide-number">05 / 08</div></section>
+
+<section><div class="container">
+<div class="eyebrow">05 · Pricing Recommendation</div><h2>Price around the <span class="blue">value moment.</span></h2>
+<div class="grid3">
+<div class="card accent"><span class="label">Commercial goal</span><div class="big">Revenue Optimization</div><p class="small">Roamly already has an established presence across 40 cities and an existing customer base.</p><p class="small">Roamly Groups creates additional value through group booking, split payments and shared itinerary planning.</p></div>
+<div class="card"><span class="label">Pricing model</span><div class="big">Transaction-Based</div><p class="small">Each traveler in the group pays a transaction fee when participating in a group booking.</p><p class="small">The fee is tied directly to successfully booking and paying for the group trip.</p></div>
+<div class="card"><span class="label">Packaging</span><div class="big">Single Offering</div><p class="small">One primary audience: group travelers, particularly the friend organizing the trip.</p><p class="small">Every traveler receives the core group features.</p></div>
+</div>
+<div class="card" style="margin-top:14px"><span class="label">Roamly Groups ★</span><table class="table"><thead><tr><th>Who it's for</th><th>Price</th><th>What's included</th></tr></thead><tbody><tr><td>Group travelers</td><td>Transaction fee per traveler</td><td>Group booking · split payments · shared itinerary planning · vetted local experiences</td></tr></tbody></table></div>
+<div class="grid2" style="margin-top:14px">
+<div class="card accent"><span class="label">Validate first · Van Westendorp</span><h3>Assumption</h3><p class="small">Travelers are willing to pay a transaction fee for the convenience of coordinating group booking, split payments and shared itinerary planning in one place.</p><h3 style="margin-top:10px">Critical risk</h3><p class="small">The acceptable transaction-fee range. If travelers do not perceive enough value, the model or who pays must be reconsidered.</p></div>
+<div class="card"><span class="label">Stakeholder story</span><p class="small"><strong>Finance</strong><br>Revenue scales with completed group transactions and the number of participating travelers.</p><p class="small"><strong>Sales Leadership</strong><br>Customers pay when they actually use Roamly Groups to complete a group booking.</p><p class="small"><strong>Product Marketing</strong><br>Pay when you travel together — no subscription required.</p></div>
+</div>
+</div><div class="slide-number">06 / 08</div></section>
+
+<section><div class="container">
+<div class="eyebrow">06 · Individual Insights</div><h2>What I learned from <span class="blue">building the GTM.</span></h2>
+<div class="grid3">
+<div class="card"><div class="insight-number">01</div><span class="label">Friction points</span><h3>Narrowing the strategy</h3>
+<p class="small">The hardest part was narrowing the strategy and making clear choices instead of trying to solve everything at once.</p>
+<p class="small">I had to decide whether Roamly Groups should compete on marketplace size or focus on group coordination, and whether pricing should be subscription-based or transaction-based.</p>
+<p class="small">I worked through this by consistently going back to the target customer, their main pain point, and the moment where the product creates value.</p></div>
+<div class="card accent"><div class="insight-number">02</div><span class="label">Biggest “aha” moment</span><h3>GTM is a chain of connected decisions</h3>
+<p class="small">My biggest “aha” moment was realizing that a strong GTM strategy is a chain of connected decisions.</p>
+<p class="small">Once I clearly defined the target customer as the friend organizing the group trip and the core problem as coordination, the positioning, messaging, competitive strategy, and pricing decisions became much easier and more consistent.</p></div>
+<div class="card"><div class="insight-number">03</div><span class="label">Key takeaways</span><h3>GTM starts before launch</h3>
+<p class="small">GTM is not just about launching or promoting a product. It starts with choosing the right customer and problem and understanding where you can realistically win.</p>
+<p class="small">Positioning, messaging, channels, pricing, and success metrics should all align around the same strategy.</p>
+<p class="small">I also learned the importance of separating assumptions from validated evidence and testing the riskiest assumptions before scaling.</p></div>
+</div>
+<div class="callout" style="margin-top:18px"><span class="label">My biggest learning</span><div class="quote">Strong GTM is not a collection of separate deliverables — it is a set of connected choices built around the same customer, problem, and value.</div></div>
+</div><div class="slide-number">07 / 08</div></section>
+
+<section><div class="container center">
+<div class="eyebrow">Roamly Groups · Go-To-Market Final Project</div>
+<h1 style="font-size:clamp(48px,6vw,82px)">Win through<br><span class="blue">group coordination.</span></h1>
+<p class="subtitle">We are betting that groups will choose a better coordination experience over a larger marketplace when planning and paying together becomes difficult.</p>
+<div style="margin-top:30px"><span class="pill">PLG</span><span class="pill">Existing users first</span><span class="pill">Group-first coordination</span><span class="pill">Transaction-based pricing</span></div>
+<h2 style="font-size:42px;margin-top:46px;margin-bottom:8px">Thank you.</h2><p>Leena Almoradi</p>
+</div><div class="slide-number">08 / 08</div></section>
+
+<script>
+const sections=[...document.querySelectorAll("section")],dotsBox=document.getElementById("dots"),progress=document.getElementById("progress");
+sections.forEach((section,index)=>{const dot=document.createElement("div");dot.className="dot";dot.addEventListener("click",()=>section.scrollIntoView({behavior:"smooth"}));dotsBox.appendChild(dot)});
+const dots=[...document.querySelectorAll(".dot")];
+function currentSlide(){let current=0,best=Infinity;sections.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top);if(d<best){best=d;current=i}});return current}
+function updateUI(){const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?(window.scrollY/max)*100:0)+"%";const c=currentSlide();dots.forEach((d,i)=>d.classList.toggle("active",i===c));sections[c].querySelector(".container")?.classList.add("animate")}
+window.addEventListener("scroll",updateUI,{passive:true});window.addEventListener("resize",updateUI);updateUI();
+document.addEventListener("keydown",e=>{const c=currentSlide();if(["ArrowDown","ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();sections[Math.min(c+1,sections.length-1)].scrollIntoView({behavior:"smooth"})}if(["ArrowUp","ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();sections[Math.max(c-1,0)].scrollIntoView({behavior:"smooth"})}if(e.key==="Home"){e.preventDefault();sections[0].scrollIntoView({behavior:"smooth"})}if(e.key==="End"){e.preventDefault();sections[sections.length-1].scrollIntoView({behavior:"smooth"})}});
+</script>
+</body>
+</html>
