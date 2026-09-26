@@ -4,71 +4,58 @@
 >
 > Turn your positioning into a message that moves people: set the market context, build a pillar per audience, activate it across surfaces, and produce one AI-generated asset.
 
-## 1. Fro/To market shift
-
-_What changed in the world that made Roamly Groups necessary? A shift in the world, not a feature._
+## 1. From/To market shift
 
 | | |
 |---|---|
-| **From** (life before) | _____ |
-| **To** (life after) | _____ |
+| **From (life before)** | Group trips coordinated across group chats, separate bookings, payment apps, and one organizer chasing everyone. |
+| **To (life after)** | A shared group travel experience where everyone can plan, book, and pay together in one place. |
 
 ## 2. Audience segmentation
 
-_There's no single right number — make a defensible call and justify it._
-
-- **Number of audiences that need their own pillar:** _____
-- **Justification — why each is distinct enough to need its own message:** _____
+- **Number of audiences that need their own pillar:** 1
+- **Justification — why each is distinct enough to need its own message:** Our primary audience is the friend organizing the group trip. This person carries most of the coordination burden, from organizing plans to collecting payments, so the message should focus directly on making their job easier and less stressful.
 
 ## 3. Messaging pillars
 
-_Build in order: value first, capabilities second, evidence last. Duplicate the table for each audience._
-
-### Pillar — Audience 1: _____
+### Pillar — Audience 1: The group trip organizer
 
 | Layer | Message |
 |---|---|
-| **🎯 Value prop** — the promise you lead with (the outcome, not a feature) | _____ |
-| **🏆 Capabilities** — the features that make the value prop real | _____ |
-| **📊 Evidence** — specific proof: which customers, what results, how fast | _____ |
-
-### Pillar — Audience 2: _____ _(optional)_
-
-| Layer | Message |
-|---|---|
-| **🎯 Value prop** | _____ |
-| **🏆 Capabilities** | _____ |
-| **📊 Evidence** | _____ |
+| **🎯 Value prop** | Organize the group trip without carrying all the coordination stress yourself. |
+| **🏆 Capabilities** | Group booking, vetted local experiences, shared itinerary planning, and split payments in one place. |
+| **📊 Evidence** | The product experience allows the group to coordinate a shared itinerary, book experiences, and track split payments together in one place. |
 
 ## 4. Activation across surfaces
 
-_Pick the three surfaces most relevant to your GTM motion. Generate each from the pillar, then refine any that drift._
-
 | Surface | Copy variation |
 |---|---|
-| _e.g. Homepage headline_ | _____ |
-| _e.g. In-app notification_ | _____ |
-| _e.g. Sales one-liner_ | _____ |
+| **Homepage headline** | **Plan the trip together. Without the group-trip chaos.** |
+| **In-app notification** | **Your group plan is ready. Invite your friends to join, choose experiences, and split the payment together.** |
+| **Social post** | **Planning the group trip shouldn't feel like a second job. Plan experiences, organize the itinerary, and split payments together with Roamly Groups.** |
 
 ## 5. AI-generated asset
 
-_Build it from copy you've already reviewed — not as a shortcut to skip the review._
+- **Asset type:** Homepage hero visual
 
-- **Asset type:** _____
-- **Prompt used:** _____
-- **Output:** _[link or `![asset](assets/launch-asset.png)`]_
-- **What you edited and why:** _____
+- **Prompt used:** Create a modern travel marketplace homepage hero for Roamly Groups using the headline “Plan the trip together. Without the group-trip chaos.” Show a group of friends traveling together and product UI elements that demonstrate a shared group itinerary and split payments. Keep the design clean, modern, warm, and focused on group travel coordination.
+
+- **Output:**
+
+![Roamly Groups Homepage Visual](./roamly-groups-homepage-visual.png.png)
+
+[View the full-size Roamly Groups Homepage Visual](https://github.com/ileena/roamly-gtm-strategy/blob/main/04-messaging/roamly-groups-homepage-visual.png.png)
+
+- **What you edited and why:** I focused the final asset on the strongest homepage message and made the shared itinerary and split-payment capabilities visible so the value proposition could be understood without additional explanation.
 
 ## 6. Blind-read result
 
-_Let a peer (or AI role-play) cold-read the asset — no context. The gap is your last edit._
-
 | Question | What they understood |
 |---|---|
-| Who is it built for? | _____ |
-| What does the product do? | _____ |
-| What makes you trust it? | _____ |
+| **Who is it built for?** | Friends planning and organizing a group trip together. |
+| **What does the product do?** | It helps groups plan experiences, manage a shared itinerary, and split payments in one place. |
+| **What makes you trust it?** | The visual shows the actual group itinerary and split-payment experience, making the product benefits feel concrete and believable. |
 
 ## Link to full artifact
 
-_[link to your Messaging Builder export / slide]_
+[View the full Messaging Builder artifact](https://github.com/ileena/roamly-gtm-strategy/blob/main/04-messaging/roamly-m4-messaging-ex2.md)
