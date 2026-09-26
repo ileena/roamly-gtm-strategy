@@ -1,51 +1,40 @@
 # Final GTM Presentation — Roamly Groups
 
 > Module 6 · Launch — ★ Final submission
->
-> Assemble your six deliverables into one shareable presentation. The fastest way to a polished result is to generate it as a single, self-contained **HTML file** with any AI tool, then save it here as `final-presentation.html`.
 
-## How to build it
+## Final Presentation
 
-1. Open the **[Presentation Prompt Builder](../../Modules/Module%206%20-%20Presentation%20Prompt%20Builder.html)** (or use the prompt below).
-2. Get your deliverables in — the fast way: paste your **public GitHub repo link** into the *Quick-fill from your project repo* bar and it pulls these six markdown files automatically. Or paste them in by hand (Modules 1–5 + your individual insights).
-3. Review and tidy the imported text, then copy the generated prompt into Claude, ChatGPT, Gemini — any LLM.
-4. Save the returned file as `final-presentation.html` in this folder.
-5. Open it in a browser to review, refine the content where needed, and submit your copy to the LMS within **7 days** of the course completing.
+This presentation brings together the complete Go-To-Market strategy for Roamly Groups, including GTM strategy, competitive intelligence, positioning, messaging, pricing, and individual insights.
 
-## The master prompt
+The final presentation is published as a self-contained HTML deck and can be viewed directly in the browser.
 
-```
-You are an expert presentation designer. Create a single, self-contained HTML file
-for my final Go-To-Market project presentation. It must run offline by opening the
-file in a browser — all CSS and JS inline, no build step, no external assets.
+## Presentation Structure
 
-DESIGN
-- Full-viewport vertical scroll-snap deck: one <section> per slide, min-height:100vh.
-- Dark navy theme (#07162C), white headings, light-grey body text, a blue accent (#3b82f6).
-- Clean typography, subtle fade-in on scroll, a top progress bar, right-side nav dots,
-  and arrow-key navigation. Professional and minimal — no stock images. Fully responsive.
+1. Title — Leena Almoradi · Go-To-Market Final Project
+2. GTM Strategy
+3. Competitive Intelligence & Strategic Bet
+4. Positioning
+5. Messaging
+6. Pricing Recommendation
+7. Individual Insights
+8. Closing
 
-STRUCTURE — one slide each, in this order:
-1. Title — "[NAME] · Go-To-Market Final Project", product: Roamly Groups, today's date.
-2. GTM Strategy — motion + rationale, target segment, one-pager summary.
-3. Competitive Intelligence & Strategic Bet — battlecard highlights + the strategic bet.
-4. Positioning — framework, finalized statement, and one-liner.
-5. Messaging — three pillars (Value Prop, Capabilities, Evidence) per audience + AI asset.
-6. Pricing Recommendation — model, packaging, and the validating research method.
-7. Individual Insights — friction points, biggest "aha" moment, key takeaways.
-8. Closing — a one-line summary of the GTM bet + thank you.
+## Individual Insights
 
-CONTENT — use exactly what I paste below; keep each slide tight and scannable (bullets > paragraphs).
---- GTM STRATEGY ---            <paste from 01-gtm-strategy/gtm-strategy.md>
---- COMPETITIVE INTEL & BET ---  <paste from 02-competitive-intel/battlecard-and-bet.md>
---- POSITIONING ---             <paste from 03-positioning/positioning.md>
---- MESSAGING ---              <paste from 04-messaging/messaging-and-asset.md>
---- PRICING ---                <paste from 05-pricing/pricing-recommendation.md>
---- INDIVIDUAL INSIGHTS ---     <paste from 06-launch/individual-insights.md>
+### Friction points
 
-OUTPUT — return only the complete HTML file in one code block, ready to save as index.html.
-```
+The hardest part was narrowing the strategy and making clear choices instead of trying to solve everything at once. For example, I had to decide whether Roamly Groups should compete on marketplace size or focus on group coordination, and whether pricing should be subscription-based or transaction-based. I worked through this by consistently going back to the target customer, their main pain point, and the moment where the product creates value.
+
+### My biggest “aha” moment
+
+My biggest “aha” moment was realizing that a strong GTM strategy is a chain of connected decisions. Once I clearly defined the target customer as the friend organizing the group trip and the core problem as coordination, the positioning, messaging, competitive strategy, and pricing decisions became much easier and more consistent.
+
+### Key takeaways
+
+My key takeaway is that GTM is not just about launching or promoting a product. It starts with choosing the right customer and problem, understanding where you can realistically win, and then aligning positioning, messaging, channels, pricing, and success metrics around that strategy.
+
+I also learned the importance of separating assumptions from validated evidence and testing the riskiest assumptions before scaling.
 
 ## Link to the published deck
 
-_[link to your final-presentation.html — e.g. a GitHub Pages URL]_
+[View the Roamly Groups Final GTM Presentation](https://ileena.github.io/roamly-gtm-strategy/06-launch/final-presentation.html)
