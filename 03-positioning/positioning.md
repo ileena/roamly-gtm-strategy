@@ -8,40 +8,42 @@
 
 | Component | Your answer |
 |---|---|
-| **Target customer** — who is it for? | _____ |
-| **Market category** — what is it? | _____ |
-| **Key benefit** — the #1 value | _____ |
-| **Competitive alternative** — vs. what? | _____ |
-| **Differentiator** — why us, uniquely | _____ |
-| **Proof** — evidence it's true | _____ |
+| **Target customer — who is it for?** | The friend responsible for organizing a group trip. |
+| **Market category — what is it?** | Group travel planning and booking platform. |
+| **Key benefit — the #1 value** | Makes organizing a group trip easier and less stressful. |
+| **Competitive alternative — vs. what?** | Airbnb plus fragmented tools such as group chats and payment apps. |
+| **Differentiator — why us, uniquely** | Combines vetted local experiences, shared itinerary planning, and split payments in one group-first experience. |
+| **Proof — evidence it's true** | Travelers can coordinate the itinerary, book experiences, and split payments in one place. |
 
 ## 2. Core product truth
 
-_The one thing that is undeniably true about Roamly Groups that competitors can't easily claim._
+Roamly Groups brings group planning, booking, and split payments together in one coordinated experience.
 
-_____
+---
 
 ## 3. Positioning statement
 
-> For **[target customer]** who **[need]**, **Roamly Groups** is the **[category]** that **[key benefit]**. Unlike **[alternative]**, Roamly Groups **[differentiator]**.
+> For the friend organizing a group trip who needs an easier way to coordinate everyone, Roamly Groups is a group travel planning and booking platform that makes organizing the trip simple and less stressful. Unlike using travel marketplaces, group chats, and separate payment apps, Roamly Groups brings vetted local experiences, shared itinerary planning, and split payments together in one place.
 
 ## 4. Pressure tests
 
-_Run the statement through each test and note what you'd fix._
-
 | Test | Pass? | Note |
 |---|---|---|
-| **Ownable** — could a competitor say the same? | _____ | _____ |
-| **Believable** — is the proof real? | _____ | _____ |
-| **Relevant** — does the ICP care? | _____ | _____ |
-| **Durable** — holds as the product grows? | _____ | _____ |
+| **Ownable — could a competitor say the same?** | Yes | The group-first combination of booking, shared planning, and split payments creates clearer differentiation. |
+| **Believable — is the proof real?** | Yes | The positioning is based directly on Roamly Groups' core product capabilities. |
+| **Relevant — does the ICP care?** | Yes | It addresses the organizer's main pain: coordinating plans and collecting payments across the group. |
+| **Durable — holds as the product grows?** | Yes | The positioning is built around solving group coordination, not a single feature. |
 
 ## 5. Positioning vs. messaging note
 
-_How does this fixed positioning translate to the homepage headline vs. the sales opener vs. the app store blurb?_
+The positioning stays focused on making group travel coordination easier, while the message changes by channel: the homepage should lead with simplicity, the sales opener should focus on the organizer's pain, and the app store blurb should highlight the key capabilities.
 
-_____
+- **Homepage headline:** Plan the trip together. Without the group-trip chaos.
+- **Sales opener:** Stop chasing everyone for plans and payments.
+- **App store blurb:** Plan experiences, organize your itinerary, and split payments with your group — all in one place.
+
+---
 
 ## Link to full artifact
 
-_[link to your Positioning Builder export / slide]_
+[View the full Positioning Builder artifact](https://github.com/ileena/roamly-gtm-strategy/blob/main/03-positioning/roamly-m3-positioning-ex2.md)
