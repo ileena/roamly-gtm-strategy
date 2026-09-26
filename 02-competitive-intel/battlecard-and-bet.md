@@ -27,3 +27,5 @@ We are betting that groups will choose a better coordination experience over a l
 - The opportunity for Roamly is not to beat Airbnb on scale, but to solve group coordination better.
 - Group travelers often need to coordinate decisions, payments, and plans across multiple people and tools.
 - Roamly Groups combines group booking + split payments + shared itinerary planning around that specific problem.
+
+https://github.com/ileena/roamly-gtm-strategy/blob/main/02-competitive-intel/roamly-m2-competitive-ex2.md
